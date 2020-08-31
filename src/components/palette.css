@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.palette {
+  height: 100vh;
+}
+
+.palette-colors {
+  height: 90%;
+}

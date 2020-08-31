@@ -1,0 +1,31 @@
+.navigation {
+  background: #444;
+  padding: 1% 1%;
+  display: flex;
+  align-items: center;
+}
+
+.navigation h5 {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+.slider {
+  width: 350px;
+  margin-left: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.slider .MuiSlider-track {
+  background: #777;
+}
+
+.slider .MuiSlider-rail {
+  background: #777;
+}
+
+.slider .MuiSlider-thumb {
+  background: #999;
+}

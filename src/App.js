@@ -1,10 +1,13 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import PaletteList from './components/PaletteList'
-import Palette from './components/Palette'
-import SingleColorPalette from './components/SingleColorPalette'
+
 import palettes from './contexts/palettes'
 import { generatePalette } from './utils/colorHelper'
+import './App.css'
+
+import Palette from './components/Palette'
+import SingleColorPalette from './components/SingleColorPalette'
 
 const findPalette = id => palettes.find(palette => palette.id === id)
 

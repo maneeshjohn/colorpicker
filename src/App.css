@@ -1,4 +1,10 @@
-.navigation {
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/* .navigation {
   background: #fff;
   padding: 0;
   display: flex;
@@ -44,4 +50,4 @@
 
 .MuiInputBase-input, .MuiListItem-gutters, .Mui-selected {
   font-size: 12px !important;
-}
+} */

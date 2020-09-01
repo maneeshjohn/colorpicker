@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Slider, Select, MenuItem, Snackbar, IconButton } from '@material-ui/core'
+import { makeStyles } from '@material-ui/styles'
+import styles from '../styles/navigationStyles'
 import CloseIcon from '@material-ui/icons/Close'
-import './navigation.css'
 
-const Navigation = ({ value, format, onSlide, onChange }) => {
+const Navigation = ({ value, format, onSlide, onChange, multiColors }) => {
 
   const [open, setOpen] = useState(false)
   const history = useHistory()
+  const useStyles = makeStyles(styles)
+  const classes = useStyles()
 
   const closeSnackbar = () => setOpen(false)
 
@@ -19,18 +22,20 @@ const Navigation = ({ value, format, onSlide, onChange }) => {
   }
 
   return(
-    <div className="navigation">
+    <div className={ classes.navigation }>
       <h5 onClick={ () => history.push('/') }>Color Picker</h5>
-      <div className="slider">
-        <Slider
-          min={ 100 }
-          max={ 900 }
-          step={ 100 }
-          defaultValue={ value }
-          onChange={ onSliderChange }
-        />
-      </div>
-      <div className="select-container">
+      {multiColors && (
+        <div className={ classes.sliderContainer }>
+          <Slider
+            min={ 100 }
+            max={ 900 }
+            step={ 100 }
+            defaultValue={ value }
+            onChange={ onSliderChange }
+          />
+        </div>
+      )}
+      <div className={ classes.selectContainer }>
         <Select
           value={ format }
           onChange={ onFormatChange }

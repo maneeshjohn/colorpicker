@@ -1,5 +1,10 @@
 import chroma from 'chroma-js'
 
+const getThemeColor = (bg) => ({
+  dark: (chroma(bg).luminance() <= 0.1)? ' dark-text': '',
+  light: (chroma(bg).luminance() >= 0.6)? ' light-text': ''
+})
+
 const levels = [50,100,200,300,400,500,600,700,800,900]
 
 export const generatePalette = referencePalette => {
@@ -31,4 +36,8 @@ const generateScale = (hex, noOfColors = 10) => {
 const generateColorRange = hex => {
   const endColor = '#FFFFFF'
   return [chroma(hex).darken(1.4).hex(), hex, endColor]
+}
+
+export const getTextColors = (bg, theme = 'dark', className = '') => {
+  return `${className}${getThemeColor(bg)[theme]}`
 }

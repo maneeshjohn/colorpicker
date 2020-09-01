@@ -1,0 +1,47 @@
+.navigation {
+  background: #fff;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navigation h5 {
+  margin: 0;
+  padding: 1.5%;
+  color: #333;
+  background: #eee;
+  font-weight: 100;
+  cursor: pointer;
+}
+
+.slider {
+  width: 350px;
+  margin-left: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.slider .MuiSlider-track {
+  background: #ddd;
+}
+
+.slider .MuiSlider-rail {
+  background: #ccc;
+}
+
+.slider .MuiSlider-thumb {
+  background: #888;
+}
+
+.slider .MuiSlider-thumb:after {
+  display: none;
+}
+
+.select-container {
+  margin-left: auto;
+  padding-right: 1%;
+}
+
+.MuiInputBase-input, .MuiListItem-gutters, .Mui-selected {
+  font-size: 12px !important;
+}

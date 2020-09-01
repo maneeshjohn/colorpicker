@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import PaletteList from './components/PaletteList'
 import Palette from './components/Palette'
+import SingleColorPalette from './components/SingleColorPalette'
 import palettes from './contexts/palettes'
 import { generatePalette } from './utils/colorHelper'
 
@@ -14,14 +15,26 @@ const App = () => {
       <Route
         exact
         path="/"
-        render={ () => <PaletteList palettes={ palettes } /> }
+        render={ props => <PaletteList { ...props } palettes={ palettes } /> }
       />
       <Route
         exact
         path="/palettes/:id"
-        render={ ({ match }) => (
+        render={ props => (
           <Palette
-            palette={ generatePalette(findPalette(match.params.id)) }
+            { ...props }
+            palette={ generatePalette(findPalette(props.match.params.id)) }
+          />
+        )}
+      />
+      <Route
+        exact
+        path="/palettes/:paletteId/:colorId"
+        render={ props => (
+          <SingleColorPalette
+            { ...props }
+            colorId={ props.match.params.colorId }
+            palette={ generatePalette(findPalette(props.match.params.paletteId)) }
           />
         )}
       />

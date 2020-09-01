@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import './color-box.css'
 
-const ColorBox = ({ background, name }) => {
+const ColorBox = ({ background, name, url, showLink }) => {
 
   const [showOverlay, setShowOverlay] = useState(false)
 
@@ -29,7 +30,9 @@ const ColorBox = ({ background, name }) => {
         <div className="copy-wrapper">
           <div className="color-details">{ name }</div>
           <button className="copy-button">COPY</button>
-          <span className="see-more">More</span>
+          {showLink && <Link to={ url } onClick={ e => e.stopPropagation() }>
+            <span className="see-more">More</span>
+          </Link>}
         </div>
       </div>
     </CopyToClipboard>
